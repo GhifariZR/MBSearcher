@@ -9,7 +9,7 @@
 <script src="{% static 'js/main.js' %}"></script>
 <script src="https://biostall.com/wp-content/uploads/2010/07/jquery-swapsies.js"></script>
 <body style="background-color:Orange;">
-<title>Ghifari Zakaria Ramadhan</title>
+<title>MBSearcher</title>
 <style>
   button{
     float: right;
@@ -30,8 +30,13 @@
   {% endblock topnav %}
 {% block content %}
 <div class="header">
-  <h1>Pencari Musik dan Buku</h1>
+  <h1>MBSearcher</h1>
+  <h1>Pencari Album Musik dan Buku</h1>
 </div>
-  
+<div class="content1">
+  <p>Website ini dapat digunakan untuk mencari album musik dan buku yang ada pada database API.<br>
+    ada 2 buah API yang digunakan yakni API <a href="https://www.googleapis.com/books/v1/volumes?q=">Googlebooks</a> dan API Spotify dari <a href="https://rapidapi.com/Glavier/api/spotify23/">Rapidapi</a> </p>
+</div>
+
 
 {% endblock content %}

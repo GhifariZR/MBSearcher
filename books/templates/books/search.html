@@ -35,14 +35,14 @@
                 var array_items = data.items;
                 console.log(array_items);
                 $("#daftar_isi").empty();
-                $("#daftar_isi").append("<tr><th>Judul Buku</th><th>penulis</th><th>Gambar Buku</th><th>Publisher</th><th>deskripsi</th></tr>")
+                $("#daftar_isi").append("<tr><th>Judul Buku</th><th>penulis</th><th>Gambar Buku</th><th>Preview Link</th><th>deskripsi</th></tr>")
                 for(i=0;i< array_items.length;i++){
                     var judul = array_items[i].volumeInfo.title;
-                    var penulis = array_items[i].volumeInfo.authors[1];
+                    var penulis = array_items[i].volumeInfo.authors[0];
                     var gambar =array_items[i].volumeInfo.imageLinks.smallThumbnail;
-                    var publisher = array_items[i].volumeInfo.publisher;
+                    var URL = array_items[i].volumeInfo.previewLink;
                     var deskripsi = array_items[i].volumeInfo.description;
-                    $("#daftar_isi").append("<tr><td>"+judul+"</td><td>"+penulis+"</td><td><img src="+gambar+"></td><td>"+publisher+"</td><td>"+deskripsi+"</td>");
+                    $("#daftar_isi").append("<tr><td>"+judul+"</td><td>"+penulis+"</td><td><img src="+gambar+"></td><td><a href="+URL+">"+URL+"</a></td><td>"+deskripsi+"</td>");
                 }
             }
         })
