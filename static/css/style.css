@@ -1,0 +1,79 @@
+
+.header {
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.content1 {
+    margin-left: 10px;
+    width: 50%;
+    border: 4px solid black;
+    background-color: #FFBF00;
+    padding: 20px;
+    overflow: hidden;
+}
+.content1 p{
+    margin-left: 15px;
+    display: block;
+    margin: 2px 0 0 0;
+}
+.content1 img{
+  float: left;
+  margin: 0px 15px 15px 0px;
+  border: 1px solid black;
+}
+
+table, th, td {
+  margin-left: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.rightcolumn1 {
+  margin-right: 10px;
+  float: right;
+  width: 30%;
+  background-color: yellow;
+  border: 2px solid #000000;
+  padding-left: 20px;
+}
+.leftcolumn1 {
+  margin-left: 10px;
+  float: left;
+  width: 50%;
+  border: 2px solid #000000;
+  background-color: yellow;
+  padding-left: 20px;
+}
+.footer {
+  position: relative;
+  bottom: 0px;
+  padding: 20px;
+  text-align: left;
+  background: #323A45;
+  color: #FFBF00;
+}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body style="background-color:Orange;">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<style>
+    input,h1{
+        margin-left: 10px;
+    }
+    
+</style>
+<title>Cari musik</title>
+{% endblock meta %}    
+{% block topnav%}
+<a href="/">Home</a>
+{% endblock topnav%}
+{% block content %}
+
+<h1>Cari Album musik</h1>
+<input id="keyword" placeholder="Masukan Kata Kunci">
+<br>
+<br>
+<table id="daftar_isi">
+</table>
+
+<script type="text/javascript">
+    $("#keyword").keyup(function(){
+        var ketikan = $("#keyword").val();
+        console.log(ketikan);
+        $.ajax({
+            url:'/datas?q='+ketikan,
+            success:function(data){
+                var array_items = data.albums.items;
+                console.log(array_items);
+                $("#daftar_isi").empty();
+                $("#daftar_isi").append("<tr><th>Judul Album</th><th>Penyanyi</th><th>Gambar Album</th><th>URI</th><th>Tahun Rilis</th></tr>")
+                for(i=0;i< array_items.length;i++){
+                    var judul = array_items[i].data.name;
+                    var penyanyi = array_items[i].data.artists.items[0].profile.name;
+                    var gambar =array_items[i].data.coverArt.sources[0].url;
+                    var uri = array_items[i].data.uri;
+                    var date = array_items[i].data.date.year;
+                    $("#daftar_isi").append("<tr><td>"+judul+"</td><td>"+penyanyi+"</td><td><img src="+gambar+"></td><td><a href="+uri+"> "+uri+"</a> </td> <td>"+date+"</td>");
+                }
+            }
+        })
+    })
+</script>
+{% endblock content %}

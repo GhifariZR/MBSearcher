@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+  {% block meta %}
+  {% endblock meta %}
+</head>
+
+<body>
+  
+  <div class="topnav">
+    {% block topnav %}
+    {% endblock topnav %}
+  </div>
+  
+  {% block content %}
+  {% endblock content %}
+
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
+  <div class="footer">
+    Project lainnya:
+    <ul>
+      <li><a href="https://ghifari-zakaria.herokuapp.com/FirstWeb/"style=”color:yellow”>web pertama</a> </li>
+      <li><a href="https://ghifari-zakaria.herokuapp.com/"style=”color:yellow”>web data diri</a></li>
+      <li><a href="https://ghifari-zakaria.herokuapp.com/UI/"style=”color:yellow”>Web UI</a></li>
+    </ul>
+  </div>
+</body>
+</html>
