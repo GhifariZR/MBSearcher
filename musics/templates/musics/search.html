@@ -31,6 +31,7 @@
         console.log(ketikan);
         $.ajax({
             url:'/datas?q='+ketikan,
+            async : false,
             success:function(data){
                 var array_items = data.albums.items;
                 console.log(array_items);

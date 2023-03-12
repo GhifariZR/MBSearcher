@@ -31,6 +31,7 @@
         console.log(ketikan);
         $.ajax({
             url:'/data?q='+ketikan,
+            async : false,
             success:function(data){
                 var array_items = data.items;
                 console.log(array_items);
@@ -38,7 +39,7 @@
                 $("#daftar_isi").append("<tr><th>Judul Buku</th><th>penulis</th><th>Gambar Buku</th><th>Preview Link</th><th>deskripsi</th></tr>")
                 for(i=0;i< array_items.length;i++){
                     var judul = array_items[i].volumeInfo.title;
-                    var penulis = array_items[i].volumeInfo.authors[0];
+                    var penulis = array_items[i].volumeInfo.authors;
                     var gambar =array_items[i].volumeInfo.imageLinks.smallThumbnail;
                     var URL = array_items[i].volumeInfo.previewLink;
                     var deskripsi = array_items[i].volumeInfo.description;
